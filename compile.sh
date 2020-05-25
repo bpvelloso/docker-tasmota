@@ -12,7 +12,7 @@ DOCKER_IMAGE=blakadder/docker-tasmota
 
 # set to `true` to use latest stable tag
 # set to `false` to use `development` branch
-USE_STABLE=0
+USE_STABLE=false
 
 
 ## Check whether Tasmota/ exists and fetch newest Tasmota version from development branch
@@ -103,7 +103,7 @@ else
         read -p "Enter to exit, "yes" to proceed: " answer
             case ${answer:0:1} in
                 y|yes )
-                    git clone https://github.com/arendst/Tasmota.git
+                    git clone https://github.com/bpvelloso/Tasmota.git
                     bash $(basename $0) && exit   
                 ;;
                 * )
