@@ -1,2 +1,4 @@
 Tasmota/
 *.log
+*.bin
+*.bin.gz
