@@ -23,12 +23,12 @@ if test -d `pwd`"/Tasmota"; then
     if [ "$USE_STABLE" = "1" ]; then
         echo -e "Checking Tasmota GitHub for the most recent release version"
         TASMOTA_BRANCH=$(wget -qO - https://api.github.com/repos/arendst/Tasmota/releases/latest | grep -oP 'tag_name"\s*:\s*"\K[^"]+')
-        git checkout --force $TASMOTA_BRANCH >/dev/null 2>&1
+        #git checkout --force $TASMOTA_BRANCH >/dev/null 2>&1
     else
         echo -e "Checking Tasmota GitHub for the most recent development version"
         TASMOTA_BRANCH=development
-        git reset --hard origin/$TASMOTA_BRANCH > /dev/null 2>&1
-        git pull origin $TASMOTA_BRANCH > /dev/null 2>&1
+        #git reset --hard origin/$TASMOTA_BRANCH > /dev/null 2>&1
+        #git pull origin $TASMOTA_BRANCH > /dev/null 2>&1
     fi
 
     if [ -z "$TASMOTA_BRANCH" ]; then
@@ -103,7 +103,7 @@ else
         read -p "Enter to exit, "yes" to proceed: " answer
             case ${answer:0:1} in
                 y|yes )
-                    git clone https://github.com/bpvelloso/Tasmota.git
+                    #git clone https://github.com/bpvelloso/Tasmota.git
                     bash $(basename $0) && exit   
                 ;;
                 * )
